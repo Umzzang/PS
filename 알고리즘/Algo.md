@@ -10,3 +10,25 @@ function fngcb(a, b) {
 }
 ```
 
+
+
+# JavaScript sort
+
+```javascript
+function compare(a, b) {
+    return a- b
+}
+
+function solution(array) {
+    var answer = 0;
+    
+    return array.sort(compare)[parseInt(array.length/2)];
+}
+```
+
+ ** sort() 안에 함수 안넣으면 문자열로 취급해서 오름차순함
+
+
+
+
+
