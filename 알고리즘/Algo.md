@@ -32,5 +32,40 @@ compare함수의 리턴값에 따라서 변경할지 결정
 
 
 
+# JavaScript Reduce
 
+```
+배열의 각 요소에 대해 주어진 리듀서 (reducer) 함수를 실행하고, 하나의 결과값을 반환합니다.
+```
+
+**callback 함수**
+
+배열의 각 element들에 대해서 실행되는 callback 함수이고, 
+
+이 함수의 리턴값은 다음 element에 대한 callback 함수 실행시 파라미터(accumulator)로 전달됩니다.
+
+- **accumulator** : 이전 element에 대한 callback 함수의 리턴값
+- **currentValue** : 현재 처리중인 배열 element
+- **currentIndex** : 현재 처리중인 배열 index
+- **array** : 배열 전체
+
+**initialValue**
+
+callback 함수를 처음 실행할 때, accumulator의 값.
+
+
+
+## sum 구하기
+
+```javascript
+const arr = [1, 2, 3];
+
+const result = arr.reduce(function add(sum, currValue) {
+  return sum + currValue;
+}, 0);
+```
+
+
+
+**reduceRight은 reduce와 같지만 오른쪽부터 연산 시작**
 
