@@ -69,3 +69,23 @@ const result = arr.reduce(function add(sum, currValue) {
 
 **reduceRight은 reduce와 같지만 오른쪽부터 연산 시작**
 
+
+
+
+
+# JavaScript repeat
+
+```
+repeat() 메서드는 문자열을 주어진 횟수만큼 반복해 붙인 새로운 문자열을 반환합니다.
+```
+
+
+
+```javascript
+function solution(n) {
+    for(let i = 1; i < n + 1; i++) {
+        console.log('*'.repeat(i));
+    }
+}
+```
+
