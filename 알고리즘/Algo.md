@@ -89,3 +89,21 @@ function solution(n) {
 }
 ```
 
+
+
+# JavaScript ASCII
+
+* charCodeAt()
+
+```javascript
+console.log('A'.charCodeAt())      // 65
+```
+
+
+
+* fromCharCode()
+
+```javascript
+console.log(String.fromCharCode(65, 66));   //'AB'
+```
+
