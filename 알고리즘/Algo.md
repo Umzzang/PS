@@ -107,3 +107,50 @@ console.log('A'.charCodeAt())      // 65
 console.log(String.fromCharCode(65, 66));   //'AB'
 ```
 
+
+
+# Object key, value
+
+* object는 iterable 하지 않기 때문에 for of 불가능
+* for - in
+
+```javascript
+var obj = {
+    a: 1, 
+    b: 2, 
+    c: 3
+};
+
+for (var prop in obj) {
+    console.log(prop, obj[prop]); // a 1, b 2, c 3
+}
+```
+
+* Object.keys()
+
+```javascript
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+};
+
+console.log(Object.keys(object1));
+// expected output: Array ["a", "b", "c"]
+```
+
+* Object.values()
+
+```javascript
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+};
+
+console.log(Object.values(object1));
+// expected output: Array ["somestring", 42, false]
+```
+
+
+
