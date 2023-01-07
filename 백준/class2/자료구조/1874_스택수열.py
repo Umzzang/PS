@@ -10,15 +10,14 @@ for i in range(len(lst)):
         max = lst[i]
         answer += '+' * lst[i] + '-'
     else:
-        if lst[i] > max:
-            max = lst[i]
-            answer += '+' * (lst[i]-max) + '-'
-        else:
-            if lst[i-1] < lst[i]:
-                answer = 'NO'
-                break
+        if lst[i] > lst[i-1]:
+            if lst[i] > max:
+                answer += '+' * (lst[i] - max) + '-'
+                max = lst[i]
             else:
-                answer += '-' * (max-lst[i])
+                answer = 'NO'
+        else:
+            answer += '-' 
     
 
-print(answer)
+print(*answer, sep='\n')
