@@ -4,7 +4,6 @@ input = sys.stdin.readline
 
 n = int(input())
 
-<<<<<<< HEAD
 stack = []
 
 for _ in range(n):
@@ -28,7 +27,6 @@ for _ in range(n):
             print(stack[-1])    
         else:
             print(-1)
-=======
 lst = list(map(int, input().split()))
 
 sort_lst = sorted(list(set(lst)))
@@ -40,4 +38,3 @@ for i in range(len(sort_lst)):
 print(dic)
 for i in range(n):
     print(dic[lst[i]], end=' ')
->>>>>>> c16723eeeea1671384cfe3cd4ee52df7ef4e7545
