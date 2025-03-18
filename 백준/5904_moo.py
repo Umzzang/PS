@@ -17,26 +17,20 @@ while dp[i] <=n:
 print(dp, i)
 
 def search(x, i): # 11 2
-    # if not dp:
-    #     return 'm'
-    print(x,i)
-    if x == 1:
-        return 'm'
-    elif x == 2:
-        return 'o'
-    elif x== 3:
-        return 'o'
+    middle = i + 3
+    half = dp[i-1]
 
-    count = i + 3
-    if dp[i-1] + count > x:
-        if x ==dp[i-1] + 1:
+    if x <= half:
+        return search(x, i-1)
+    elif x < half + middle:
+        if x -middle == 1:
             return 'm'
         else:
             return 'o'
-    elif dp[i-1] + count < x:
-        return search(x-count-dp[i-1], i-1)
     else:
-        return 'o'
+        return search(x-middle-half, i-1)
+
+
 
 
 print(search(n, i))
