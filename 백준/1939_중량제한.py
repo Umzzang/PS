@@ -73,7 +73,7 @@ def bfs(start, weight):
         if x == e-1:
             return True
         for land, w in bridges[x]:
-            if parent[e-1] == parent[land] and visited[land] ==0 and w >= weight:
+            if visited[land] ==0 and w >= weight:
                 q.append(land)
                 visited[land] = 1
                 # maxweight = m+in(maxweight, w)
