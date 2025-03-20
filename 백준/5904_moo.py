@@ -10,6 +10,8 @@ while dp[i] < n:
 
 
 
+
+             
 def search(n, i):
     count = i+3
 
@@ -28,6 +30,9 @@ def search(n, i):
         else:
             return 'o'
     else:
+        # return search(x-middle-half, i-1)
+
+
         return search(n-count-dp[i-1], i-1)
 
 
