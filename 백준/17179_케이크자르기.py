@@ -19,14 +19,13 @@ def search(l, r, cut, arr):
             answer.append(arr[len(arr)-1] - now)
             
         
-        if cnt > cut:
-            l = mid + 1
-        elif cnt < cut:
-            r = mid -1
-        else:
+        if cnt >= cut:
             l = mid + 1
             if ans < min(answer):
                 ans = min(answer)
+        elif cnt < cut:
+            r = mid -1
+        
         # print(mid, cnt, answer, ans)
     return ans
 
