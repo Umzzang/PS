@@ -24,10 +24,19 @@ def main():
     cost = []
     total = 0
     for _ in range(m):
-        a,b,c= map(int,input().split())
-        heapq.heappush(cost, [c,a,b])
-    while cost:
-        c, a, b = heapq.heappop(cost)
+        # a,b,c= map(int,input().split())
+        # heapq.heappush(cost, [c,a,b])
+        cost.append(list(map(int,input().split())))
+    cost.sort(key=lambda x : x[2])
+    # while cost:
+    #     c, a, b = heapq.heappop(cost)
+    #     if find(a) == find(b):
+    #         continue
+    #     else:
+    #         union(a,b)
+    #         total += c
+    #         last = c
+    for a,b,c in cost:
         if find(a) == find(b):
             continue
         else:
