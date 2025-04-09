@@ -1,35 +1,16 @@
 import sys
-from bisect import bisect_left
 
-input = sys.stdin.readline
 
-n = int(input())
-
-score = list(map(int, input().split()))
-score.sort()
-
-# cnt = {}
-# for sc in score:
-#     if cnt.get(sc):
-#         cnt[sc] += 1
-#     else:
-#         cnt[sc] = 1
-
-answer = 0
 # print(score)
-for i in range(n-2):
-    first = score[i]
-    target = 0 - first
-
-    l = i+1
-    r = n-1
+def find(l, r, target, score):
+    answer = 0
     while l<r:
         now = score[l] + score[r]
         # print(target, l, r)
         if target == now:
             if score[l] == score[r]:
-                answer += (r-l)
-                l += 1
+                answer += ((r-l+1) * (r-l))//2
+                break
             else:
                 rcnt = 0
                 lcnt = 0
@@ -41,18 +22,28 @@ for i in range(n-2):
                     lcnt += 1
                     l += 1
                 answer += lcnt * rcnt
-                # answer += cnt[score[l]] * cnt[score[r]]
-                # l += cnt[score[l]]
-                # r -= cnt[score[r]]
-                # idx = bisect_left(score, score[r])
-                # answer += r-idx + 1
-                # l += 1
-
-
         elif target > now:
             l += 1
         else:
             r -= 1
+    return answer
 
-print(answer)
+def main():
+    input = sys.stdin.readline
+    n = int(input())
+    score = list(map(int, input().split()))
+    score.sort()
+    answer = 0
+    for i in range(n-2):
+        first = score[i]
+        target = 0 - first
+
+        l = i+1
+        r = n-1
+        answer += find(l, r, target, score)
+
+    print(answer)
+
+if __name__ == "__main__":
+    main()
 
